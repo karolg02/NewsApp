@@ -4,8 +4,7 @@ A modern news application that allows users to browse the latest articles using 
 
 ## 📸 Screenshots
 
-![Home view with filters](./screenshot1.png)  
-![News list view](./screenshot2.png)
+
 
 ## ⚙️ Technologies
 
