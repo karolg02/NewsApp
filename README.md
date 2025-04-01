@@ -4,6 +4,10 @@ A modern news application that allows users to browse the latest articles using 
 
 ## 📸 Screenshots
 
+![image](https://github.com/user-attachments/assets/eb9a0853-16c4-4e11-897f-7df1704ff2ab)
+
+![image](https://github.com/user-attachments/assets/ee87e168-552d-46a1-b23f-ec84e895b268)
+
 
 
 ## ⚙️ Technologies
