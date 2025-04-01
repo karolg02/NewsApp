@@ -1,10 +1,10 @@
 import {API_KEY} from "../../../types/config.ts";
 import {NewsResponse} from "../../../types/dataType.ts";
 
-export const getNews = async () => {
+export const getNews = async (selected: string | null) => {
     try {
         const response = await fetch(
-            `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${API_KEY}`
+            `${selected}${API_KEY}`
         );
 
         if (!response.ok) {

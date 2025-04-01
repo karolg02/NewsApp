@@ -1,34 +1,40 @@
-import {getNews} from "./api/getNews.ts";
-import {useEffect, useState} from "react";
-import {Article} from "../../types/dataType.ts";
-import {Button, Image, List, Paper, Text} from "@mantine/core";
+import {Card, Paper, SimpleGrid, Text} from "@mantine/core";
+import {categories} from "./categories.ts";
+import { useAtom } from 'jotai';
+import {selectedAtom} from "../../types/atoms.ts";
+import {useNavigate} from "react-router-dom";
 
 export const MainPage= () => {
-    const [articles, setArticles] = useState<Article[]>([]);
+    const [, setSelected] = useAtom(selectedAtom);
+    const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await getNews();
-            if (result) setArticles(result.articles);
-        };
-
-        fetchData();
-    }, []);
+    const handleCategoryClick = (url: string) => {
+        setSelected(url);
+        navigate('/news');
+    }
 
     return (
         <div>
-            <Paper shadow="xl" p="lg" radius="lg" style={{ maxWidth: '70%', margin: ' auto' }}>
-                <List p="lg" ml="xl" mr="xl">
-                    {articles.map((article) => (
-                        <div key={article.url}>
-                            <Text size="xl" fw={900}>{article.title}</Text>
-                            <Image src={article.urlToImage} alt={article.title} style={{width: "300px"}}/>
-                            <Text>{article.description}</Text>
-                            <Button>Przejdz do strony</Button>
-                            <hr/>
+            <Paper shadow="xl" p="lg" radius="lg" style={{maxWidth: '90%', margin: 'auto'}}>
+                <SimpleGrid cols={1} pt="lg" pb="lg" pl="sm" pr="sm">
+                    {categories.map((category) => (
+                        <div>
+                            <Card
+                                p="xs"
+                                radius="md"
+                                shadow="xl"
+                                style={{
+                                    cursor: 'pointer',
+                                    border: "1px solid grey",
+                                }}
+                                onClick={() => handleCategoryClick(category.value)}
+                            >
+                                <Text style={{textAlign: "center"}} size="xl">{category.label}</Text>
+                            </Card>
+
                         </div>
                     ))}
-                </List>
+                </SimpleGrid>
             </Paper>
         </div>
     );
