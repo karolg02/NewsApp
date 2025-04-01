@@ -47,6 +47,7 @@ export const SecondPage= () => {
                                         href={article.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        c="black" bg="white" style={{border: "2px solid black"}}
                                     >
                                         Visit original site
                                     </Button>
@@ -58,7 +59,7 @@ export const SecondPage= () => {
                     ))}
                 </List>
             </Paper>
-            <Button pos="fixed" bottom="10px" left="10px" onClick={() => navigate("/")}
+            <Button pos="fixed" bottom="10px" left="10px" onClick={() => navigate("/")} c="black" bg="white" style={{border: "2px solid black"}}
             >
                 <IconArrowBackUp/>
             </Button>

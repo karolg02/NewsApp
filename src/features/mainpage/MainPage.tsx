@@ -1,6 +1,6 @@
 import {Card, Paper, SimpleGrid, Text} from "@mantine/core";
 import {categories} from "./categories.ts";
-import { useAtom } from 'jotai';
+import {useAtom} from 'jotai';
 import {selectedAtom} from "../../types/atoms.ts";
 import {useNavigate} from "react-router-dom";
 
@@ -25,9 +25,10 @@ export const MainPage= () => {
                                 shadow="xl"
                                 style={{
                                     cursor: 'pointer',
-                                    border: "1px solid grey",
+                                    border: "2px solid black",
                                 }}
                                 onClick={() => handleCategoryClick(category.value)}
+                                c="black" bg="white"
                             >
                                 <Text style={{textAlign: "center"}} size="xl">{category.label}</Text>
                             </Card>
