@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+# 📰 NewsApp – React + TypeScript + NewsAPI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern news application that allows users to browse the latest articles using various filters and queries. It integrates with the external [NewsAPI.org](https://newsapi.org/) and uses [Mantine](https://mantine.dev/) for sleek UI components.
 
-Currently, two official plugins are available:
+## 📸 Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Home view with filters](./screenshot1.png)  
+![News list view](./screenshot2.png)
 
-## Expanding the ESLint configuration
+## ⚙️ Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Mantine UI](https://mantine.dev/)
+- [NewsAPI](https://newsapi.org/)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Features
+
+- Predefined topic filters (e.g. Tesla, Apple, TechCrunch, WSJ)
+- Displays articles with image, title, description and link to the full article
+- Responsive layout using `Grid` and `Paper` components from Mantine
+- Clean and minimal design
+- Error handling for failed API responses
+
+## 🛠️ Installation
+
+```bash
+git clone https://github.com/your-username/news-app.git
+cd news-app
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔐 Environment Setup
+````bash
+Create a .env file in the project root and add your API key from NewsAPI:
+Paste this below line in .env file
+VITE_NEWS_API_KEY=your_api_key_here
+````
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🧪 Run the App
+- npm run dev
